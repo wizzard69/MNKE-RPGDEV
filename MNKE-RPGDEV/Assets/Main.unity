@@ -237,7 +237,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 34184834}
-  moveSpeed: 3
+  moveSpeed: 4
   gridSize: 1
   allowDiagonals: 0
 --- !u!4 &274683702
