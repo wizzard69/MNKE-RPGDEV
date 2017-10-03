@@ -47,7 +47,6 @@ public class PlayerController : MonoBehaviour
     IEnumerator move(Transform transform)
     {
         isMoving = true;
-        anim.SetBool("jump", true);
 
         startPos = transform.position;
         t = 0;
@@ -68,17 +67,23 @@ public class PlayerController : MonoBehaviour
         else
         {
             factor = 1f;
+            anim.SetBool("jump", true);
         }
 
         while (t < 1f)
         {
             t += Time.deltaTime * (moveSpeed / gridSize) * factor;
             transform.position = Vector3.Lerp(startPos, endPos, t);
+
+            if (t >= 0.6f)
+            {
+                anim.SetBool("jump", false);
+            }
+
             yield return null;
         }
 
         isMoving = false;
-        anim.SetBool("jump", false);
         yield return 0;
     }
 
