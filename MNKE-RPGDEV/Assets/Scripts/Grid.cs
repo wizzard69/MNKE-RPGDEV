@@ -66,14 +66,16 @@ public class Grid : MonoBehaviour
         {
             Node playerNode = nodeFromWorldPoint(player.position);
 
-            PlayerNodePosition.instance.AddCode("ffff");
-
             foreach (Node n in grid)
             {
                 Gizmos.color = (n.walkable) ? Color.white : Color.red;
 
                 if (playerNode.gridX == n.gridX && playerNode.gridY == n.gridY)
                 {
+                    PlayerNodePosition.Instance().playerXCoord = playerNode.gridX;
+
+                    PlayerNodePosition.Instance().playerYCoord = playerNode.gridY;
+
                     Gizmos.color = Color.green;
                 }
 

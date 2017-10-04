@@ -60,11 +60,11 @@ public Animator anim;
 					print(Direction.Down);
 				}
 
-                NodeDataTest();
-
 				StartCoroutine(move(moveableObject));
-			}
-		}
+
+                NodeDataTest();
+            }
+        }
 	}
 
 	IEnumerator move(Transform _transform)
@@ -101,9 +101,9 @@ public Animator anim;
 			yield return null;
 		}
 
-		isMoving = false;
+        isMoving = false;
 		yield return 0;
-	}
+    }
 
 	bool CanMoveToNode(Node targetNode)
 	{
@@ -117,6 +117,6 @@ public Animator anim;
 
     void NodeDataTest()
     {
-
+        print(PlayerNodePosition.Instance().playerXCoord + ":" + PlayerNodePosition.Instance().playerYCoord);
     }
 }

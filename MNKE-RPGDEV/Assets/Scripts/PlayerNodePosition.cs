@@ -1,29 +1,21 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
 
-public class PlayerNodePosition : MonoBehaviour
+public class PlayerNodePosition
 {
-	string code;
+    static PlayerNodePosition instance;
 
+    public static PlayerNodePosition Instance()
+    {
+        if (instance == null)
+        {
+            instance = new PlayerNodePosition();
+        }
 
-		public static PlayerNodePosition instance = null;
+        return instance;
+    }
 
-		void Awake()
-		{
-			if (instance == null)
-			{
-				instance = this;
-			}
-			else if (instance != this)
-			{
-				Destroy(gameObject);
-			}
-		}
+    public int playerXCoord { get; set; }
 
-
-	public void AddCode(string _code)
-	{
-		code = _code;
-	}
+    public int playerYCoord { get; set; }
 }
