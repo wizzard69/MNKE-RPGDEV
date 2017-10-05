@@ -18,4 +18,6 @@ public class PlayerNodePosition
     public int playerXCoord { get; set; }
 
     public int playerYCoord { get; set; }
+
+    public Node playerNode { get; set; }
 }
