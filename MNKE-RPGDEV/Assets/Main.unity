@@ -238,8 +238,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9885ca4109fc4b6fab875949be2a783, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animator: {fileID: 34184834}
-  moveableObject: {fileID: 274683702}
   moveSpeed: 3
   gridSize: 1
   allowDiagonals: 0
@@ -443,6 +441,8 @@ GameObject:
   - component: {fileID: 995419547}
   - component: {fileID: 995419546}
   - component: {fileID: 995419545}
+  - component: {fileID: 995419550}
+  - component: {fileID: 995419549}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -515,6 +515,31 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &995419549
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 995419544}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9885ca4109fc4b6fab875949be2a783, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 2
+  gridSize: 1
+  allowDiagonals: 0
+--- !u!114 &995419550
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 995419544}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a593b60ec6dc5ac4ab359c23d923c086, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1102201352
 GameObject:
   m_ObjectHideFlags: 0
@@ -817,8 +842,6 @@ MonoBehaviour:
     m_Bits: 512
   gridWorldSize: {x: 12, y: 12}
   nodeRadius: 0.5
-  player: {fileID: 274683702}
-  path: []
 --- !u!4 &1434024985
 Transform:
   m_ObjectHideFlags: 0

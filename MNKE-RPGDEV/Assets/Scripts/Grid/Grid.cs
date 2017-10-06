@@ -9,7 +9,6 @@ public class Grid : MonoBehaviour
 
     public Vector2 gridWorldSize;
     public float nodeRadius;
-    public Transform player;
     Node[,] grid;
 
     public static List<Node> notWalkableNodes = new List<Node>();
@@ -26,8 +25,6 @@ public class Grid : MonoBehaviour
 
         CreateGrid();
     }
-
-    public List<Node> path;
 
     void CreateGrid()
     {
@@ -75,18 +72,10 @@ public class Grid : MonoBehaviour
 
         if (grid != null)
         {
-            Node playerNode = nodeFromWorldPoint(player.position);
-
             foreach (Node n in grid)
             {
                 Gizmos.color = notWalkableNodes.Exists(x => x.worldPosition == n.worldPosition) ? Color.red : Color.white;
 
-                if (playerNode.gridX == n.gridX && playerNode.gridY == n.gridY)
-                {
-                    PlayerNodePosition.Instance().playerNode = playerNode;
-
-                    Gizmos.color = Color.green;
-                }
                 Gizmos.DrawCube(n.worldPosition, Vector3.one * (nodeDiameter - 0.1f));
             }
         }

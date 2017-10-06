@@ -4,9 +4,6 @@ using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
-
-    public Animator animator;
-    public Transform moveableObject;
     public float moveSpeed;
     public float gridSize;
     public bool allowDiagonals = false;
@@ -14,11 +11,19 @@ public class Movement : MonoBehaviour
     enum Orientation { Horizontal, Vertical };
     Orientation gridOrientation = Orientation.Horizontal;
 
+    Animator animator;
     Vector2 input;
     bool isMoving = false;
     Vector3 startPos, endPos;
     float t, factor;
     bool canMove;
+    Grid grid;
+
+    private void Start()
+    {
+        grid = GameObject.Find("GameManager").GetComponent(typeof(Grid)) as Grid;
+        animator = GetComponentInChildren<Animator>();
+    }
 
     private void Update()
     {
@@ -62,7 +67,7 @@ public class Movement : MonoBehaviour
 
                 if (canMove)
                 {
-                    StartCoroutine(move(moveableObject));
+                    StartCoroutine(move(transform));
                 }
             }
         }
@@ -87,7 +92,11 @@ public class Movement : MonoBehaviour
         _transform.LookAt(endPos);
 
         factor = 1f;
-        animator.SetBool("jump", true);
+
+        if (animator != null)
+        {
+            animator.SetBool("jump", true);
+        }
 
         while (t < 1f)
         {
@@ -96,7 +105,10 @@ public class Movement : MonoBehaviour
 
             if (t >= 0.6f)
             {
-                animator.SetBool("jump", false);
+                if (animator != null)
+                {
+                    animator.SetBool("jump", false);
+                }
             }
 
             yield return null;
@@ -110,7 +122,7 @@ public class Movement : MonoBehaviour
     {
         canMove = true;
 
-        if (Grid.notWalkableNodes.Exists(x => x.worldPosition == (PlayerNodePosition.Instance().playerNode.worldPosition + target)))
+        if (Grid.notWalkableNodes.Exists(x => x.worldPosition == (grid.nodeFromWorldPoint(transform.position).worldPosition + target)))
         {
             canMove = false;
         }
