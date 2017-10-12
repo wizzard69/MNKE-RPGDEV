@@ -2,13 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyController : MonoBehaviour
+public class EnemyController : Enemy
 {
-
-    [Range(0.6f, 3.0f)]
-    public float moveWaitTime;
-    public float detectionDistance;
-    public int maxSpaceToMoveBeforeRotate;
     public LayerMask raycastLayerMask;
 
     enum FaceDirection { Forward, Backward, Left, Right };
@@ -24,7 +19,10 @@ public class EnemyController : MonoBehaviour
 
     private void Start()
     {
+        base.start();
+
         movement = GetComponent<Movement>();
+
         ResetMoves();
     }
 

@@ -304,6 +304,7 @@ GameObject:
   - component: {fileID: 274683702}
   - component: {fileID: 274683701}
   - component: {fileID: 274683703}
+  - component: {fileID: 274683704}
   m_Layer: 10
   m_Name: PlayerObject
   m_TagString: Player
@@ -346,6 +347,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9fb913146dfe1354eb50605849a1113d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &274683704
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 274683700}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f678494a60ee8974282ddb3f3f8f65c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &440704524
@@ -706,9 +718,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a593b60ec6dc5ac4ab359c23d923c086, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveWaitTime: 1
-  detectionDistance: 3
+  damageAmount: 0
+  attackAmount: 0
   maxSpaceToMoveBeforeRotate: 5
+  detectionDistance: 3
+  moveWaitTime: 1
+  playerhealth: {fileID: 0}
   raycastLayerMask:
     serializedVersion: 2
     m_Bits: 1024
@@ -1025,7 +1040,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1343064886}
   m_Layer: 10
-  m_Name: EnemyObject (1)
+  m_Name: StaticEnemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
