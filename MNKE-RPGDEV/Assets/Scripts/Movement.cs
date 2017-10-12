@@ -5,8 +5,8 @@ using UnityEngine;
 public class Movement : MonoBehaviour
 {
     public float moveSpeed;
-    public float gridSize;
 
+    float gridSize = 1f;
     Animator animator;
     bool isMoving = false;
     Vector3 startPos, endPos;
