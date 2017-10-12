@@ -18,18 +18,17 @@ public class PlayerController : MonoBehaviour
 
         input = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
 
-
         if (Mathf.Abs(input.x) > Mathf.Abs(input.y))
         {
             input.y = 0;
         }
-
 
         if (input != Vector2.zero)
         {
             if (input.x > 0)
             {
                 canMove = movement.ObjectCanMove(new Vector3(1f, 0f, 0f));
+                print(PlayerPrefs.gamelevel);
             }
 
             if (input.x < 0)

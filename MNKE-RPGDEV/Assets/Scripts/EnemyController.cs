@@ -54,14 +54,13 @@ public class EnemyController : Enemy
         {
             if (Vector3.Distance(hit.transform.position, transform.position) <= 1f)
             {
-                print("Attack Hero: " + hit.collider.name);
                 ResetMoves();
                 return;
             }
 
             if (hit.collider.tag == "Player")
             {
-                print("Hero is in the way: " + hit.collider.name);
+                playerhealth.TakeDamage(1);
             }
         }
     }
