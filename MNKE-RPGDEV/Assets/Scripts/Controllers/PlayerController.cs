@@ -2,11 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Movement))]
 public class PlayerController : MonoBehaviour
 {
     Vector2 input;
     Movement movement;
     bool canMove;
+
 
     private void Start()
     {
@@ -15,7 +17,6 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-
         input = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
 
         if (Mathf.Abs(input.x) > Mathf.Abs(input.y))
@@ -28,7 +29,7 @@ public class PlayerController : MonoBehaviour
             if (input.x > 0)
             {
                 canMove = movement.ObjectCanMove(new Vector3(1f, 0f, 0f));
-                print(PlayerPrefs.gamelevel);
+                //print(PlayerPrefs.gamelevel);
             }
 
             if (input.x < 0)
@@ -51,6 +52,5 @@ public class PlayerController : MonoBehaviour
                 movement.MoveObject(input);
             }
         }
-
     }
 }

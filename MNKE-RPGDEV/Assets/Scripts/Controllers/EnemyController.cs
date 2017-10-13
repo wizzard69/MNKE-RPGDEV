@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Movement))]
 public class EnemyController : Enemy
 {
     public LayerMask raycastLayerMask;
@@ -60,11 +61,11 @@ public class EnemyController : Enemy
 
             if (hit.collider.tag == "Player")
             {
-                playerhealth.TakeDamage(1);
+                //playerhealth.TakeDamage(1);
             }
         }
     }
-    
+   
     IEnumerator EnemyMove()
     {
         yield return new WaitForSeconds(moveWaitTime);
