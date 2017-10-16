@@ -5,6 +5,9 @@ using UnityEngine;
 [RequireComponent(typeof(Movement))]
 public class PlayerController : MonoBehaviour
 {
+    public GunController gun;
+    public bool allowDiagonals = false;
+
     Vector2 input;
     Movement movement;
     bool canMove;
@@ -19,9 +22,16 @@ public class PlayerController : MonoBehaviour
     {
         input = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
 
-        if (Mathf.Abs(input.x) > Mathf.Abs(input.y))
+        if (!allowDiagonals)
         {
-            input.y = 0;
+            if (Mathf.Abs(input.x) > Mathf.Abs(input.y))
+            {
+                input.y = 0;
+            }
+            else
+            {
+                input.x = 0;
+            }
         }
 
         if (input != Vector2.zero)
@@ -29,7 +39,6 @@ public class PlayerController : MonoBehaviour
             if (input.x > 0)
             {
                 canMove = movement.ObjectCanMove(new Vector3(1f, 0f, 0f));
-                //print(PlayerPrefs.gamelevel);
             }
 
             if (input.x < 0)
@@ -51,6 +60,16 @@ public class PlayerController : MonoBehaviour
             {
                 movement.MoveObject(input);
             }
+        }
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            gun.isFiring = true;
+        }
+
+        if (Input.GetKeyUp(KeyCode.Space))
+        {
+            gun.isFiring = false;
         }
     }
 }
