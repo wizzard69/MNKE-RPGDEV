@@ -199,6 +199,19 @@ public class EnemyController : Enemy
     {
         Debug.DrawRay(transform.position, transform.forward * detectionDistance, Color.blue);
 
+        RaycastHit hit;
+
+        if (Physics.Raycast(transform.position, transform.forward, out hit, detectionDistance, raycastLayerMask))
+        {
+            if (Vector3.Distance(hit.transform.position, transform.position) > 1f)
+            {
+                if (hit.collider.tag == "Player")
+                {
+                    print("Player Found");
+                }
+            }
+        }
+
         if (!isRotating)
         {
             if (curRotate == fullrotate)
