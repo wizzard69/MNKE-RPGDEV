@@ -837,6 +837,7 @@ GameObject:
   - component: {fileID: 666012107}
   - component: {fileID: 666012105}
   - component: {fileID: 666012104}
+  - component: {fileID: 666012110}
   m_Layer: 10
   m_Name: EnemyObject
   m_TagString: Enemy
@@ -855,9 +856,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad012d855bc183846bf0e345503ba584, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxSpaceToMoveBeforeRotate: 5
-  detectionDistance: 3
-  moveWaitTime: 1
+  maxSpaceToMoveBeforeRotate: 0
+  detectionDistance: 0
+  moveWaitTime: 0.6
 --- !u!114 &666012105
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -912,12 +913,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a593b60ec6dc5ac4ab359c23d923c086, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxSpaceToMoveBeforeRotate: 5
+  maxSpaceToMoveBeforeRotate: 2
   detectionDistance: 3
   moveWaitTime: 1
-  raycastLayerMask:
-    serializedVersion: 2
-    m_Bits: 1024
 --- !u!136 &666012109
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -931,6 +929,20 @@ CapsuleCollider:
   m_Height: 1
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &666012110
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 666012103}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 541e296d4d846ea41978a00de9b546a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  raycastLayerMask:
+    serializedVersion: 2
+    m_Bits: 1024
 --- !u!1 &689728313
 GameObject:
   m_ObjectHideFlags: 0
@@ -1105,7 +1117,7 @@ GameObject:
   - component: {fileID: 1017957253}
   m_Layer: 0
   m_Name: Sword
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -15,7 +15,7 @@ public class Movement : MonoBehaviour
 
     private void Start()
     {
-        grid = GameObject.Find("GameManager").GetComponent(typeof(Grid)) as Grid;
+        grid = FindObjectOfType<Grid>() as Grid;
         animator = GetComponentInChildren<Animator>();
     }
 
