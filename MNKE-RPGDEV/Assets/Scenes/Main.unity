@@ -326,7 +326,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9885ca4109fc4b6fab875949be2a783, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 3
 --- !u!4 &274683702
 Transform:
   m_ObjectHideFlags: 0
@@ -354,6 +353,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gun: {fileID: 862785364}
   allowDiagonals: 0
+  moveSpeed: 3
 --- !u!114 &274683704
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -836,7 +836,6 @@ GameObject:
   - component: {fileID: 666012108}
   - component: {fileID: 666012107}
   - component: {fileID: 666012105}
-  - component: {fileID: 666012104}
   - component: {fileID: 666012110}
   m_Layer: 10
   m_Name: EnemyObject
@@ -845,20 +844,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &666012104
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 666012103}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ad012d855bc183846bf0e345503ba584, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxSpaceToMoveBeforeRotate: 0
-  detectionDistance: 0
-  moveWaitTime: 0.6
 --- !u!114 &666012105
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -901,7 +886,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9885ca4109fc4b6fab875949be2a783, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 2
 --- !u!114 &666012108
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -913,9 +897,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a593b60ec6dc5ac4ab359c23d923c086, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxSpaceToMoveBeforeRotate: 2
-  detectionDistance: 3
-  moveWaitTime: 1
+  enemyStats: {fileID: 11400000, guid: 4d959387e2e8f4bf9bdfe72355e90437, type: 2}
+  switchState: 0
 --- !u!136 &666012109
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1463,7 +1446,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1389612078}
   m_LocalRotation: {x: 0.2588191, y: 0, z: 0, w: 0.9659258}
-  m_LocalPosition: {x: 0.5, y: 6, z: -9}
+  m_LocalPosition: {x: 0.5, y: 5, z: -9}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1530,20 +1513,6 @@ Light:
   m_Lightmapping: 4
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
-  m_FalloffTable:
-    m_Table[0]: 0
-    m_Table[1]: 0
-    m_Table[2]: 0
-    m_Table[3]: 0
-    m_Table[4]: 0
-    m_Table[5]: 0
-    m_Table[6]: 0
-    m_Table[7]: 0
-    m_Table[8]: 0
-    m_Table[9]: 0
-    m_Table[10]: 0
-    m_Table[11]: 0
-    m_Table[12]: 0
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
   m_ShadowRadius: 0

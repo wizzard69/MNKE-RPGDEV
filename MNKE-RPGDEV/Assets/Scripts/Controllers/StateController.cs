@@ -6,9 +6,11 @@ public class StateController : MonoBehaviour
 {
     public LayerMask raycastLayerMask;
 
-    public float detectionDistance { get; set; }
-    public float moveWaitTime { get; set; }
-    public int maxSpaceToMoveBeforeRotate { get; set; }
+    //public float detectionDistance { get; set; }
+    //public float moveWaitTime { get; set; }
+    //public int maxSpaceToMoveBeforeRotate { get; set; }
+    //public float moveSpeed { get; set; }
+    public EnemyStats enemyStats { get; set; }
 
     enum EnemyState { Patrol, Move2Target, Search, Attack }
     EnemyState curState;
@@ -36,22 +38,22 @@ public class StateController : MonoBehaviour
         {
             case EnemyState.Patrol:
                 gizmocolor = Color.green;
-                EnemyPatrolling(detectionDistance, moveWaitTime, maxSpaceToMoveBeforeRotate);
+                EnemyPatrolling(enemyStats.detectionDistance, enemyStats.moveWaitTime, enemyStats.maxSpaceToMoveBeforeRotate, enemyStats.moveSpeed);
                 break;
             case EnemyState.Move2Target:
                 gizmocolor = Color.yellow;
-                EnemyMoveToTarget(detectionDistance, moveWaitTime, maxSpaceToMoveBeforeRotate);
+                EnemyMoveToTarget(enemyStats.detectionDistance, enemyStats.moveWaitTime, enemyStats.maxSpaceToMoveBeforeRotate);
                 break;
             case EnemyState.Attack:
                 gizmocolor = Color.red;
-                EnemyAttack(moveWaitTime);
+                EnemyAttack(enemyStats.moveWaitTime);
                 break;
             default:
                 break;
         }
     }
 
-    public void EnemyPatrolling( float detectionDistance, float moveWaitTime, int maxSpaceToMoveBeforeRotate)
+    public void EnemyPatrolling(float detectionDistance, float moveWaitTime, int maxSpaceToMoveBeforeRotate, float moveSpeed)
     {
         targetNode = null;
 
@@ -63,7 +65,7 @@ public class StateController : MonoBehaviour
             {
                 isWaiting = true;
 
-                movement.MoveObject(new Vector2(moveDirection.x, moveDirection.z));
+                movement.MoveObject(new Vector2(moveDirection.x, moveDirection.z), moveSpeed);
 
                 StartCoroutine(EnemyMove(moveWaitTime));
             }
@@ -142,7 +144,7 @@ public class StateController : MonoBehaviour
             {
                 isWaiting = true;
 
-                movement.MoveObject(new Vector2(moveDirection.x, moveDirection.z));
+                movement.MoveObject(new Vector2(moveDirection.x, moveDirection.z), enemyStats.moveSpeed);
 
                 StartCoroutine(EnemyMove(moveWaitTime));
             }

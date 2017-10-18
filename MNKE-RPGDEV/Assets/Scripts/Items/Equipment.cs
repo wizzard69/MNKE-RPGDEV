@@ -9,6 +9,7 @@ public class Equipment : Item {
 
     public int armorModifier;
     public int damageModifier;
+    public bool IsProjectile;
     public SkinnedMeshRenderer prefab;
 
 }

@@ -1,20 +1,33 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+using RPGStateMachine;
 
 [RequireComponent(typeof(Movement))]
 [RequireComponent(typeof(StateController))]
 public class EnemyController : Enemy
 {
     StateController stateController;
+    public StateMachine<EnemyController> stateMachine { get; set; }
+
+    [HideInInspector]
+    public bool switchState = false;
 
     private void Start()
     {
         stateController = GetComponent<StateController>();
-        stateController.detectionDistance = detectionDistance;
-        stateController.maxSpaceToMoveBeforeRotate = maxSpaceToMoveBeforeRotate;
-        stateController.moveWaitTime = moveWaitTime;
+        stateController.enemyStats = enemyStats;
 
-        base.start();  
+        stateMachine = new StateMachine<EnemyController>(this);
+        stateMachine.ChangeState(PatrolState.Instance);
+
+        base.start();
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown((KeyCode.P)))
+        {
+            switchState = !switchState;
+        }
+        stateMachine.Update();
     }
 }

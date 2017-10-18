@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
-    public float moveSpeed;
+    //public float moveSpeed;
 
     float gridSize = 1f;
     Animator animator;
@@ -19,15 +19,15 @@ public class Movement : MonoBehaviour
         animator = GetComponentInChildren<Animator>();
     }
 
-    public void MoveObject(Vector2 input)
+    public void MoveObject(Vector2 input, float moveSpeed)
     {
         if (!isMoving)
         {
-            StartCoroutine(Move(transform, input));
+            StartCoroutine(Move(transform, input, moveSpeed));
         }
     }
 
-    IEnumerator Move(Transform _transform, Vector2 input)
+    IEnumerator Move(Transform _transform, Vector2 input, float moveSpeed)
     {
         isMoving = true;
 

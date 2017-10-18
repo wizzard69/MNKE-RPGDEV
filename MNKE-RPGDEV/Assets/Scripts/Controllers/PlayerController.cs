@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour
 {
     public GunController gun;
     public bool allowDiagonals = false;
+    public float moveSpeed;
 
     Vector2 input;
     Movement movement;
@@ -58,7 +59,7 @@ public class PlayerController : MonoBehaviour
 
             if (canMove)
             {
-                movement.MoveObject(input);
+                movement.MoveObject(input,moveSpeed);
             }
         }
 
