@@ -1,42 +1,37 @@
-﻿namespace RPGStateMachine
+﻿using UnityEngine;
+
+public class StateMachine : MonoBehaviour
 {
-    public class StateMachine<T>
+    private IState currentlyRunningState;
+    private IState previousState;
+
+    public void ChangeState(IState newState)
     {
-        public State<T> currentState { get; private set; }
-        public T Owner;
-
-        public StateMachine(T _o)
+        if (this.currentlyRunningState != null)
         {
-            Owner = _o;
-            currentState = null;
+            this.currentlyRunningState.Exit();
         }
 
-        public void ChangeState(State<T> _newState)
-        {
-            if (currentState != null)
-            {
-                currentState.ExitState(Owner);
-            }
-            currentState = _newState;
+        this.previousState = this.currentlyRunningState;
 
-            currentState.EnterState(Owner);
-        }
+        this.currentlyRunningState = newState;
+        this.currentlyRunningState.Enter();
+    }
 
-        public void Update()
+    public void ExecuteStateUpdate()
+    {
+        var runningState = this.currentlyRunningState;
+
+        if (runningState != null)
         {
-            if (currentState != null)
-            {
-                currentState.UpdateState(Owner);
-            }
+            this.currentlyRunningState.Execute();
         }
     }
 
-    public abstract class State<T>
+    public void SwitchToPreviousState()
     {
-        public abstract void EnterState(T _owner);
-
-        public abstract void ExitState(T _owner);
-
-        public abstract void UpdateState(T _owner);
+        this.currentlyRunningState.Exit();
+        this.currentlyRunningState = previousState;
+        this.currentlyRunningState.Enter();
     }
 }

@@ -6,11 +6,7 @@ public class StateController : MonoBehaviour
 {
     public LayerMask raycastLayerMask;
 
-    //public float detectionDistance { get; set; }
-    //public float moveWaitTime { get; set; }
-    //public int maxSpaceToMoveBeforeRotate { get; set; }
-    //public float moveSpeed { get; set; }
-    public EnemyStats enemyStats { get; set; }
+     public EnemyStats enemyStats { get; set; }
 
     enum EnemyState { Patrol, Move2Target, Search, Attack }
     EnemyState curState;
@@ -25,6 +21,7 @@ public class StateController : MonoBehaviour
 
     private void Start()
     {
+        targetNode = null;
         curState = EnemyState.Patrol;
         grid = FindObjectOfType<Grid>() as Grid;
         movement = GetComponent<Movement>();

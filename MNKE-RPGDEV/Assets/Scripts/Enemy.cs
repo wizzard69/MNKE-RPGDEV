@@ -5,8 +5,6 @@ using UnityEngine;
 [RequireComponent(typeof(CharacterStats))]
 public class Enemy : MonoBehaviour
 {
-    public EnemyStats enemyStats;
-
     CharacterStats stats;
 
     public void start()
