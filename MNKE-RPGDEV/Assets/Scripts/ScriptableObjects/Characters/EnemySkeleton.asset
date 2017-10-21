@@ -22,3 +22,4 @@ MonoBehaviour:
   PatrolColor: {r: 0, g: 1, b: 0, a: 1}
   MoveToColor: {r: 1, g: 1, b: 0, a: 1}
   AttackColor: {r: 1, g: 0, b: 0, a: 1}
+  Level: 1

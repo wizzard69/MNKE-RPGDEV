@@ -13,4 +13,5 @@ public class EnemyStats : ScriptableObject
     public Color PatrolColor;
     public Color MoveToColor;
     public Color AttackColor;
+    public int Level;
 }
