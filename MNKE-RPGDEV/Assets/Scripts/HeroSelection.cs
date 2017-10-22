@@ -9,4 +9,20 @@ public class HeroSelection : MonoBehaviour {
     {
         SceneManager.LoadScene("Main");
     }
+
+    public void StartSelection(string character)
+    {
+        switch (character)
+        {
+            case "knight":
+                SceneManager.LoadScene("Main");
+                break;
+            case "wizard":
+                SceneManager.LoadScene("Main");
+                break;
+            case "ranger":
+                SceneManager.LoadScene("Main");
+                break;
+        }
+    }
 }
