@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class HeroSelection : MonoBehaviour {
@@ -15,13 +13,13 @@ public class HeroSelection : MonoBehaviour {
         switch (character)
         {
             case "knight":
-                SceneManager.LoadScene("Main");
+                SceneManager.LoadScene("KnightSelection");
                 break;
             case "wizard":
-                SceneManager.LoadScene("Main");
+                SceneManager.LoadScene("WizardSelection");
                 break;
             case "ranger":
-                SceneManager.LoadScene("Main");
+                SceneManager.LoadScene("RangerSelection");
                 break;
         }
     }

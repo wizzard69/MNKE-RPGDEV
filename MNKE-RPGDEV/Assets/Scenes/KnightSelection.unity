@@ -182,11 +182,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 85516990}
---- !u!4 &107104963 stripped
-Transform:
-  m_PrefabParentObject: {fileID: 4694198244816068, guid: 328e40535684ded4089313c6a5f8360b,
-    type: 2}
-  m_PrefabInternal: {fileID: 1004863377}
 --- !u!1 &310035881
 GameObject:
   m_ObjectHideFlags: 0
@@ -263,15 +258,15 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11500000, guid: 0e7beeb1cae93514cbe538ad162fb540, type: 3}
-        m_MethodName: 
-        m_Mode: 1
+      - m_Target: {fileID: 490092585}
+        m_MethodName: KnightItemSelection
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: Outfit
           m_BoolArgument: 0
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
@@ -385,15 +380,15 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11500000, guid: 0e7beeb1cae93514cbe538ad162fb540, type: 3}
-        m_MethodName: 
-        m_Mode: 1
+      - m_Target: {fileID: 490092585}
+        m_MethodName: KnightItemSelection
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: Shield
           m_BoolArgument: 0
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
@@ -431,11 +426,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 395790589}
---- !u!4 &442906217 stripped
-Transform:
-  m_PrefabParentObject: {fileID: 4225872384170650, guid: 328e40535684ded4089313c6a5f8360b,
-    type: 2}
-  m_PrefabInternal: {fileID: 1004863377}
 --- !u!1 &490092583
 GameObject:
   m_ObjectHideFlags: 0
@@ -485,6 +475,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e7beeb1cae93514cbe538ad162fb540, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  KnightDefaultPrefab: {fileID: 1352574119020062, guid: 328e40535684ded4089313c6a5f8360b,
+    type: 2}
+  KnightDefaultSwordPrefab: {fileID: 1976869555045022, guid: b6430dad943a06b489112d9bfc2f914f,
+    type: 2}
+  KnightDefaultShieldPrefab: {fileID: 1466470182065424, guid: 67f7492028f0bd346848d3a0430b2c46,
+    type: 2}
+  outfitPanel: {fileID: 976553236}
+  swordPanel: {fileID: 1171142155}
+  shieldPanel: {fileID: 680286374}
 --- !u!114 &490092586
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -518,48 +517,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 490092583}
---- !u!1001 &530981528
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 442906217}
-    m_Modifications:
-    - target: {fileID: 4103329465122552, guid: b6430dad943a06b489112d9bfc2f914f, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4103329465122552, guid: b6430dad943a06b489112d9bfc2f914f, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4103329465122552, guid: b6430dad943a06b489112d9bfc2f914f, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4103329465122552, guid: b6430dad943a06b489112d9bfc2f914f, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4103329465122552, guid: b6430dad943a06b489112d9bfc2f914f, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4103329465122552, guid: b6430dad943a06b489112d9bfc2f914f, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4103329465122552, guid: b6430dad943a06b489112d9bfc2f914f, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4103329465122552, guid: b6430dad943a06b489112d9bfc2f914f, type: 2}
-      propertyPath: m_RootOrder
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: b6430dad943a06b489112d9bfc2f914f, type: 2}
-  m_IsPrefabParent: 0
 --- !u!1 &534539339
 GameObject:
   m_ObjectHideFlags: 0
@@ -636,15 +593,15 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11500000, guid: 0e7beeb1cae93514cbe538ad162fb540, type: 3}
-        m_MethodName: 
-        m_Mode: 1
+      - m_Target: {fileID: 490092585}
+        m_MethodName: KnightItemSelection
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: Sword
           m_BoolArgument: 0
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
@@ -830,11 +787,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 637859764}
---- !u!4 &643422673 stripped
-Transform:
-  m_PrefabParentObject: {fileID: 4121755234698120, guid: 328e40535684ded4089313c6a5f8360b,
-    type: 2}
-  m_PrefabInternal: {fileID: 1004863377}
 --- !u!1 &680286374
 GameObject:
   m_ObjectHideFlags: 0
@@ -903,48 +855,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 680286374}
---- !u!1001 &892498393
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 643422673}
-    m_Modifications:
-    - target: {fileID: 4172891938807192, guid: 67f7492028f0bd346848d3a0430b2c46, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4172891938807192, guid: 67f7492028f0bd346848d3a0430b2c46, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4172891938807192, guid: 67f7492028f0bd346848d3a0430b2c46, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4172891938807192, guid: 67f7492028f0bd346848d3a0430b2c46, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4172891938807192, guid: 67f7492028f0bd346848d3a0430b2c46, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4172891938807192, guid: 67f7492028f0bd346848d3a0430b2c46, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4172891938807192, guid: 67f7492028f0bd346848d3a0430b2c46, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4172891938807192, guid: 67f7492028f0bd346848d3a0430b2c46, type: 2}
-      propertyPath: m_RootOrder
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: 67f7492028f0bd346848d3a0430b2c46, type: 2}
-  m_IsPrefabParent: 0
 --- !u!1 &976553236
 GameObject:
   m_ObjectHideFlags: 0
@@ -955,13 +865,15 @@ GameObject:
   - component: {fileID: 976553237}
   - component: {fileID: 976553239}
   - component: {fileID: 976553238}
+  - component: {fileID: 976553241}
+  - component: {fileID: 976553240}
   m_Layer: 5
   m_Name: OutfitPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &976553237
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1013,52 +925,44 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 976553236}
---- !u!1001 &1004863377
-Prefab:
+--- !u!114 &976553240
+MonoBehaviour:
   m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 1050932877}
-    m_Modifications:
-    - target: {fileID: 4694198244816068, guid: 328e40535684ded4089313c6a5f8360b, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4694198244816068, guid: 328e40535684ded4089313c6a5f8360b, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4694198244816068, guid: 328e40535684ded4089313c6a5f8360b, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4694198244816068, guid: 328e40535684ded4089313c6a5f8360b, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4694198244816068, guid: 328e40535684ded4089313c6a5f8360b, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4694198244816068, guid: 328e40535684ded4089313c6a5f8360b, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4694198244816068, guid: 328e40535684ded4089313c6a5f8360b, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4694198244816068, guid: 328e40535684ded4089313c6a5f8360b, type: 2}
-      propertyPath: m_RootOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4694198244816068, guid: 328e40535684ded4089313c6a5f8360b, type: 2}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: 328e40535684ded4089313c6a5f8360b, type: 2}
-  m_IsPrefabParent: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 976553236}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 173bd62378629d740ac3dad90018841a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  knightOutfitDatabase: {fileID: 11400000, guid: 63b4e7af71e043843b664cd18facd036,
+    type: 2}
+  buttonPrefab: {fileID: 1795544158783974, guid: 498c0e7ca8013be4495dc85c943b84f2,
+    type: 2}
+--- !u!114 &976553241
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 976553236}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -2095666955, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Padding:
+    m_Left: 2
+    m_Right: 2
+    m_Top: 2
+    m_Bottom: 2
+  m_ChildAlignment: 0
+  m_StartCorner: 0
+  m_StartAxis: 0
+  m_CellSize: {x: 75, y: 75}
+  m_Spacing: {x: 2, y: 2}
+  m_Constraint: 0
+  m_ConstraintCount: 2
 --- !u!1 &1050932876
 GameObject:
   m_ObjectHideFlags: 0
@@ -1080,14 +984,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1050932876}
-  m_LocalRotation: {x: -0.000069010675, y: 0.9646265, z: -0.00025252032, w: -0.2636205}
+  m_LocalRotation: {x: 0, y: 0.9659259, z: -0, w: -0.25881898}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 107104963}
+  m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0.03, y: 210.57, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 210, z: 0}
 --- !u!1 &1057510327
 GameObject:
   m_ObjectHideFlags: 0
@@ -1187,13 +1090,15 @@ GameObject:
   - component: {fileID: 1171142156}
   - component: {fileID: 1171142158}
   - component: {fileID: 1171142157}
+  - component: {fileID: 1171142160}
+  - component: {fileID: 1171142159}
   m_Layer: 5
   m_Name: SwordPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1171142156
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1245,6 +1150,44 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1171142155}
+--- !u!114 &1171142159
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1171142155}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bba15162d5c07a740909bce954bc4130, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  knightSwordDatabaseObject: {fileID: 11400000, guid: 5024cd7836c0fe0429394a09710828fe,
+    type: 2}
+  buttonPrefab: {fileID: 1795544158783974, guid: 9d5e971237003314aadd8a38a0f79338,
+    type: 2}
+--- !u!114 &1171142160
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1171142155}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -2095666955, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Padding:
+    m_Left: 2
+    m_Right: 2
+    m_Top: 2
+    m_Bottom: 2
+  m_ChildAlignment: 0
+  m_StartCorner: 0
+  m_StartAxis: 0
+  m_CellSize: {x: 75, y: 75}
+  m_Spacing: {x: 2, y: 2}
+  m_Constraint: 0
+  m_ConstraintCount: 2
 --- !u!1 &1244585858
 GameObject:
   m_ObjectHideFlags: 0
@@ -1364,6 +1307,20 @@ Light:
   m_Lightmapping: 4
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
+  m_FalloffTable:
+    m_Table[0]: 0
+    m_Table[1]: 0
+    m_Table[2]: 0
+    m_Table[3]: 0
+    m_Table[4]: 0
+    m_Table[5]: 0
+    m_Table[6]: 0
+    m_Table[7]: 0
+    m_Table[8]: 0
+    m_Table[9]: 0
+    m_Table[10]: 0
+    m_Table[11]: 0
+    m_Table[12]: 0
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
   m_ShadowRadius: 0

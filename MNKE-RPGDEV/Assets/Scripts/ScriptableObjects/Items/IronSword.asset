@@ -9,11 +9,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 93eb50e1d4b24ee4e9a5f0f09da22d91, type: 3}
-  m_Name: WoodenSword
+  m_Name: IronSword
   m_EditorClassIdentifier: 
-  itemName: Wooden Sword
+  prefab: {fileID: 1976869555045022, guid: b6430dad943a06b489112d9bfc2f914f, type: 2}
+  itemName: IronSword
   icon: {fileID: 0}
+  equipmentType: 1
+  isProjectile: 0
   armorModifier: 0
-  damageModifier: 0
-  IsProjectile: 0
-  prefab: {fileID: 0}
+  damageModifier: 1
+  meshPrefab: {fileID: 0}
+  prefabObject: {fileID: 1976869555045022, guid: b6430dad943a06b489112d9bfc2f914f,
+    type: 2}
