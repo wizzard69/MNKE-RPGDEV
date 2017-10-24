@@ -6,7 +6,6 @@ public class EnemyController : Enemy
 {
     public EnemyStats enemyStats;
     StateController stateController;
-    //public StateMachine<EnemyController> stateMachine { get; set; }
 
     [HideInInspector]
     public bool switchState = false;
@@ -16,18 +15,6 @@ public class EnemyController : Enemy
         stateController = GetComponent<StateController>();
         stateController.enemyStats = enemyStats;
 
-        //stateMachine = new StateMachine<EnemyController>(this);
-        //stateMachine.ChangeState(PatrolState.Instance);
-
         base.start();
     }
-
-    //private void Update()
-    //{
-    //    if (Input.GetKeyDown((KeyCode.P)))
-    //    {
-    //        switchState = !switchState;
-    //    }
-    //    stateMachine.Update();
-    //}
 }

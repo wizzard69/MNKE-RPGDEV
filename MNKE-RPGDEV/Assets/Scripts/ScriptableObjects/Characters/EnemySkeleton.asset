@@ -18,7 +18,7 @@ MonoBehaviour:
   raycastLayerMask:
     serializedVersion: 2
     m_Bits: 1024
-  moveSpeed: 2
+  moveSpeed: 3
   PatrolColor: {r: 0, g: 1, b: 0, a: 1}
   MoveToColor: {r: 1, g: 1, b: 0, a: 1}
   AttackColor: {r: 1, g: 0, b: 0, a: 1}

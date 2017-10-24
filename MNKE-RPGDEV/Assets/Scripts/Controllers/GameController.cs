@@ -3,18 +3,32 @@ using UnityEngine;
 
 public class GameController : MonoBehaviour
 {
-    public enum CharClass { KNIGHT, RANGER, WIZARD};
+    public enum CharClass { KNIGHT, RANGER, WIZARD };
+
     static GameController _instance;
 
-    [SerializeField]
     EnemyDatabase _enemyDatabase;
+
     [SerializeField]
-    CharacterSelectionData _charSelectData;
+    CharacterSelectionData defCharData;
+
+    CharacterSelectionData _charSlectData;
 
     public static GameController Instance;
 
     public EnemyDatabase enemyDatabase { get; private set; }
-    public CharacterSelectionData charSelectData { get; private set; }
+
+    public CharacterSelectionData charSelectData {
+        get
+        {
+            return this._charSlectData;
+        }
+        set
+        {
+            _charSlectData = value;
+        }
+    }
+
     public int score { get; private set; }
 
     void Awake()
@@ -33,10 +47,12 @@ public class GameController : MonoBehaviour
 
     void Start()
     {
+        _charSlectData = defCharData;
+
         enemyDatabase = _enemyDatabase;
-        charSelectData = _charSelectData;
+
         GetScore();
-   }
+    }
 
     public void GetScore()
     {

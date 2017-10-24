@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3254b178cb80b3947829f6a7d8be87a9, type: 3}
+  m_Name: DefaultCharacterData
+  m_EditorClassIdentifier: 
+  charClass: 0
+  CharacterOutfit: {fileID: 11400000, guid: 73caf678440daa14f955fcd68fc087ad, type: 2}
+  Shield: {fileID: 11400000, guid: 299cb0865a2b341db86f23f852018b17, type: 2}
+  Sword: {fileID: 11400000, guid: 5914d978ec5a66f48b37060f6583555e, type: 2}
+  Bow: {fileID: 0}
+  Arrow: {fileID: 0}
+  Staff: {fileID: 0}
+  WizardHat: {fileID: 0}
