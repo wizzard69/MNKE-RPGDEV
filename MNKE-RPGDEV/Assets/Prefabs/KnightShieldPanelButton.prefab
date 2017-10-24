@@ -39,6 +39,7 @@ GameObject:
   - component: {fileID: 222021708938334002}
   - component: {fileID: 114816107057142764}
   - component: {fileID: 114745955004579572}
+  - component: {fileID: 114332808178644110}
   m_Layer: 5
   m_Name: KnightShieldPanelButton
   m_TagString: Untagged
@@ -79,6 +80,17 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: Button
+--- !u!114 &114332808178644110
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1795544158783974}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5dbf0d3d1c2d9d4ba28d0a9239e3f46, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114745955004579572
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -118,7 +130,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 114332808178644110}
         m_MethodName: PressButton
         m_Mode: 1
         m_Arguments:

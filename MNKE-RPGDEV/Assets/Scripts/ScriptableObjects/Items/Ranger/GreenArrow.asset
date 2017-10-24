@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93eb50e1d4b24ee4e9a5f0f09da22d91, type: 3}
+  m_Name: GreenArrow
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 1383105480999018, guid: 439752872125c9e4db4dd525a26625f6, type: 2}
+  itemName: Greenarrow
+  icon: {fileID: 0}
+  equipmentType: 3
+  isProjectile: 1
+  armorModifier: 0
+  damageModifier: 0
+  meshPrefab: {fileID: 0}
+  prefabObject: {fileID: 1383105480999018, guid: 439752872125c9e4db4dd525a26625f6,
+    type: 2}

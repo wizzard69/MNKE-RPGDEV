@@ -1,0 +1,16 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 702e46fd6d8bd1e4f8366b6589c92309, type: 3}
+  m_Name: WizardHatDatabaseObject
+  m_EditorClassIdentifier: 
+  HatStatsDatabase:
+  - {fileID: 11400000, guid: c55b73b7b7a7d114fb490fbf8100da2c, type: 2}
+  - {fileID: 11400000, guid: 6b53ec46a68fde64a849a8617a3840e4, type: 2}

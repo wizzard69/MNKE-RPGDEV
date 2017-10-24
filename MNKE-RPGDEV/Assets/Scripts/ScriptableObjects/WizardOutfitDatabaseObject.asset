@@ -1,0 +1,16 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37fe004f562e5f94b8da230acebb71e0, type: 3}
+  m_Name: WizardOutfitDatabaseObject
+  m_EditorClassIdentifier: 
+  wizardOutfitDatabase:
+  - {fileID: 11400000, guid: b68b4181bc2d7614dbe5f6cec47be1a1, type: 2}
+  - {fileID: 11400000, guid: 76b980f796008ed4fafbdb9ac14cac26, type: 2}

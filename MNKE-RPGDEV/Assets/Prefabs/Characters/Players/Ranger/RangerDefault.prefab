@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 23201027838564904}
   - component: {fileID: 95528584234278498}
   m_Layer: 10
-  m_Name: Ranger
+  m_Name: RangerDefault
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

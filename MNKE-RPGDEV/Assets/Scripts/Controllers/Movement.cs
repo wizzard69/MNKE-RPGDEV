@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
-    //public float moveSpeed;
-
     float gridSize = 1f;
     Animator animator;
     bool isMoving = false;

@@ -11,3 +11,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/HeroSelection.unity
     guid: 6d4ce225f04882e4ca9fbd18e0033a33
+  - enabled: 1
+    path: Assets/Scenes/KnightSelection.unity
+    guid: 024721a6c33268b499eff453a8d71976
+  - enabled: 1
+    path: Assets/Scenes/WizardSelection.unity
+    guid: 4d11d32d1887d874092dfd2257a81ebb
+  - enabled: 1
+    path: Assets/Scenes/RangerSelection.unity
+    guid: 291258204f560214483515aac9d24656

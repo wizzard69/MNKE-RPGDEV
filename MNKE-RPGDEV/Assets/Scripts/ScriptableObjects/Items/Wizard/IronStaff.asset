@@ -9,14 +9,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 93eb50e1d4b24ee4e9a5f0f09da22d91, type: 3}
-  m_Name: WoodenShield
+  m_Name: IronStaff
   m_EditorClassIdentifier: 
-  itemName: WoodenShield
+  prefab: {fileID: 1899992707284998, guid: 12cef079d00b47a4ebb062d51c944765, type: 2}
+  itemName: IronStaff
   icon: {fileID: 0}
-  equipmentType: 0
+  equipmentType: 4
   isProjectile: 0
-  armorModifier: 1
+  armorModifier: 0
   damageModifier: 0
   meshPrefab: {fileID: 0}
-  prefabObject: {fileID: 1466470182065424, guid: 67f7492028f0bd346848d3a0430b2c46,
+  prefabObject: {fileID: 1899992707284998, guid: 12cef079d00b47a4ebb062d51c944765,
     type: 2}

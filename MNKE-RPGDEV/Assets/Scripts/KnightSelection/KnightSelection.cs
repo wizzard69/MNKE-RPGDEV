@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class KnightSelection : MonoBehaviour
@@ -9,10 +10,6 @@ public class KnightSelection : MonoBehaviour
     public GameObject outfitPanel;
     public GameObject swordPanel;
     public GameObject shieldPanel;
-
-    //public ShieldDatabase shieldDatabase;
-    //public SwordDatabase swordDatabase;
-    //public KnightOutfitDatabase KnightOutfitDatabase;
 
     GameObject currentCharacterObject;
     GameObject currentShieldObject;
@@ -27,6 +24,8 @@ public class KnightSelection : MonoBehaviour
 
     private void Start()
     {
+        GameController.Instance.charSelectData.charClass = GameController.CharClass.KNIGHT;
+
         GameObject go = (GameObject)Instantiate(KnightDefaultPrefab, GameObject.Find("CharacterObject").transform, false);
         GameObject sword = Instantiate(KnightDefaultSwordPrefab, go.transform.GetChild(0).gameObject.transform);
         GameObject shield = Instantiate(KnightDefaultShieldPrefab, go.transform.GetChild(1).gameObject.transform);
@@ -88,6 +87,8 @@ public class KnightSelection : MonoBehaviour
             currentSwordObject = Instantiate(gosword, currentCharacterObject.transform.GetChild(0).gameObject.transform);
             currentShieldObject = Instantiate(goshield, currentCharacterObject.transform.GetChild(1).gameObject.transform);
         }
+
+        GameController.Instance.charSelectData.CharacterOutfit = equipment;
     }
 
     public void UpdateSword(Equipment equipment)
@@ -97,6 +98,8 @@ public class KnightSelection : MonoBehaviour
             GameObject.Destroy(currentSwordObject);
             currentSwordObject = Instantiate(equipment.prefab, currentCharacterObject.transform.GetChild(0).gameObject.transform);
         }
+
+        GameController.Instance.charSelectData.Sword = equipment;
     }
 
     public void UpdateShield(Equipment equipment)
@@ -106,5 +109,12 @@ public class KnightSelection : MonoBehaviour
             GameObject.Destroy(currentShieldObject);
             currentShieldObject = Instantiate(equipment.prefab, currentCharacterObject.transform.GetChild(1).gameObject.transform);
         }
+
+        GameController.Instance.charSelectData.Shield = equipment;
+    }
+
+    public void ReturnToMenu()
+    {
+        SceneManager.LoadScene("HeroSelection");
     }
 }

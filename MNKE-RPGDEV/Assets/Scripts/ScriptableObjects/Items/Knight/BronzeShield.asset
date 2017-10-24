@@ -11,6 +11,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93eb50e1d4b24ee4e9a5f0f09da22d91, type: 3}
   m_Name: BronzeShield
   m_EditorClassIdentifier: 
+  prefab: {fileID: 1466470182065424, guid: 6be2d30fb4480da4d8e692b4fdb7637d, type: 2}
   itemName: BronzeShield
   icon: {fileID: 0}
   equipmentType: 0

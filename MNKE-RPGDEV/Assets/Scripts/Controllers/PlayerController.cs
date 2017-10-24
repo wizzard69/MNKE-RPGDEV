@@ -13,6 +13,10 @@ public class PlayerController : MonoBehaviour
     Movement movement;
     bool canMove;
 
+    private void Awake()
+    {
+        GetPlayer();
+    }
 
     private void Start()
     {
@@ -59,7 +63,7 @@ public class PlayerController : MonoBehaviour
 
             if (canMove)
             {
-                movement.MoveObject(input,moveSpeed);
+                movement.MoveObject(input, moveSpeed);
             }
         }
 
@@ -71,6 +75,42 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyUp(KeyCode.Space))
         {
             gun.isFiring = false;
+        }
+    }
+
+    void GetPlayer()
+    {
+        switch (GameController.Instance.charSelectData.charClass)
+        {
+            case GameController.CharClass.KNIGHT:
+                GameObject knightOutfit = GameController.Instance.charSelectData.CharacterOutfit.prefab;
+                GameObject playerSword = GameController.Instance.charSelectData.Sword.prefab;
+                GameObject playerShield = GameController.Instance.charSelectData.Shield.prefab;
+
+                GameObject knightGo = (GameObject)Instantiate(knightOutfit, GameObject.Find("PlayerObject").transform, false);
+                GameObject sword = Instantiate(playerSword, knightGo.transform.GetChild(0).gameObject.transform);
+                GameObject shield = Instantiate(playerShield, knightGo.transform.GetChild(1).gameObject.transform);
+
+                break;
+            case GameController.CharClass.RANGER:
+                GameObject RangerOutfit = GameController.Instance.charSelectData.CharacterOutfit.prefab;
+                GameObject playerBow = GameController.Instance.charSelectData.Bow.prefab;
+                GameObject playerArrow = GameController.Instance.charSelectData.Arrow.prefab;
+
+                GameObject RangerGo = (GameObject)Instantiate(RangerOutfit, GameObject.Find("PlayerObject").transform, false);
+                GameObject bow = Instantiate(playerBow, RangerGo.transform.GetChild(0).gameObject.transform);
+                GameObject arrow = Instantiate(playerArrow, RangerGo.transform);
+
+                break;
+            case GameController.CharClass.WIZARD:
+                GameObject WizardOutfit = GameController.Instance.charSelectData.CharacterOutfit.prefab;
+                GameObject playerStaff = GameController.Instance.charSelectData.Staff.prefab;
+                GameObject playerHat = GameController.Instance.charSelectData.WizardHat.prefab;
+
+                GameObject wizardGo = (GameObject)Instantiate(WizardOutfit, GameObject.Find("PlayerObject").transform, false);
+                GameObject staff = Instantiate(playerStaff, wizardGo.transform.GetChild(0).gameObject.transform);
+                GameObject hat = Instantiate(playerHat, wizardGo.transform);
+                break;
         }
     }
 }

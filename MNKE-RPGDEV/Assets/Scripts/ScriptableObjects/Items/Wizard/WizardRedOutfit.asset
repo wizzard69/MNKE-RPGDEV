@@ -1,0 +1,16 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fae01a6ec538cc94495545bef6bdc0e4, type: 3}
+  m_Name: WizardRedOutfit
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 1352574119020062, guid: 97ebc6a08da55554eabe3a4aaa06c58d, type: 2}
+  itemName: WizardRedOutfit
+  icon: {fileID: 0}
