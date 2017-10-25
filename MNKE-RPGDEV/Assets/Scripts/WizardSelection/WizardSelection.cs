@@ -24,7 +24,7 @@ public class WizardSelection : MonoBehaviour
 
     private void Start()
     {
-        GameController.Instance.charSelectData.charClass = GameController.CharClass.WIZARD;
+        GameController.Instance.CClass = "WIZARD";
 
         GameObject go = (GameObject)Instantiate(wizardDefaultPrefab, GameObject.Find("CharacterObject").transform, false);
         GameObject staff = Instantiate(wizardDefaultStaffPrefab, go.transform.GetChild(0).gameObject.transform);
@@ -88,7 +88,7 @@ public class WizardSelection : MonoBehaviour
             currentHatObject = Instantiate(goHat, currentCharacterObject.transform);
         }
 
-        GameController.Instance.charSelectData.CharacterOutfit = equipment;
+        GameController.Instance.Outfit = equipment;
     }
 
     public void UpdateStaff(Equipment equipment)
@@ -99,7 +99,7 @@ public class WizardSelection : MonoBehaviour
             currentStaffObject = Instantiate(equipment.prefab, currentCharacterObject.transform.GetChild(0).gameObject.transform);
         }
 
-        GameController.Instance.charSelectData.Staff = equipment;
+        GameController.Instance.Staff = equipment;
     }
 
     public void UpdateHat(Item equipment)
@@ -110,7 +110,7 @@ public class WizardSelection : MonoBehaviour
             currentHatObject = Instantiate(equipment.prefab, currentCharacterObject.transform);
         }
 
-        GameController.Instance.charSelectData.WizardHat = equipment;
+        GameController.Instance.Hat = equipment;
     }
 
     public void ReturnToMenu()

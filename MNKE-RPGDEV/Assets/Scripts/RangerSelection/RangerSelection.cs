@@ -24,7 +24,7 @@ public class RangerSelection : MonoBehaviour
 
     private void Start()
     {
-        GameController.Instance.charSelectData.charClass = GameController.CharClass.RANGER;
+        GameController.Instance.CClass = "RANGER";
 
         GameObject go = (GameObject)Instantiate(rangerDefaultPrefab, GameObject.Find("CharacterObject").transform, false);
         GameObject bow = Instantiate(rangerDefaultBowPrefab, go.transform.GetChild(0).gameObject.transform);
@@ -88,7 +88,7 @@ public class RangerSelection : MonoBehaviour
             currentArrowObject = Instantiate(goArrow, currentCharacterObject.transform);
         }
 
-        GameController.Instance.charSelectData.CharacterOutfit = equipment;
+        GameController.Instance.Outfit = equipment;
     }
 
     public void UpdateBow(Equipment equipment)
@@ -99,7 +99,7 @@ public class RangerSelection : MonoBehaviour
             currentBowObject = Instantiate(equipment.prefab, currentCharacterObject.transform.GetChild(0).gameObject.transform);
         }
 
-        GameController.Instance.charSelectData.Bow = equipment;
+        GameController.Instance.Bow = equipment;
     }
 
     public void UpdateArrow(Equipment equipment)
@@ -110,7 +110,7 @@ public class RangerSelection : MonoBehaviour
             currentArrowObject = Instantiate(equipment.prefab, currentCharacterObject.transform);
         }
 
-        GameController.Instance.charSelectData.Arrow = equipment;
+        GameController.Instance.Arrow = equipment;
     }
 
     public void ReturnToMenu()

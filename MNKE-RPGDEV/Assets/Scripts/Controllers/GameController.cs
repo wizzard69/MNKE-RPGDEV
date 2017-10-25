@@ -3,33 +3,55 @@ using UnityEngine;
 
 public class GameController : MonoBehaviour
 {
-    public enum CharClass { KNIGHT, RANGER, WIZARD };
+    //public enum CharClass { KNIGHT, RANGER, WIZARD };
 
     static GameController _instance;
 
     EnemyDatabase _enemyDatabase;
 
     [SerializeField]
-    CharacterSelectionData defCharData;
+    string _CClass;
+    [SerializeField]
+    Item _Outfit;
+    [SerializeField]
+    Item _Hat;
+    [SerializeField]
+    Equipment _Staff;
+    [SerializeField]
+    Equipment _Shield;
+    [SerializeField]
+    Equipment _Sword;
+    [SerializeField]
+    Equipment _Bow;
+    [SerializeField]
+    Equipment _Arrow;
 
-    CharacterSelectionData _charSlectData;
+    //[SerializeField]
+    //CharacterSelectionData defCharData;
+
+    //CharacterSelectionData _charSlectData;
 
     public static GameController Instance;
 
     public EnemyDatabase enemyDatabase { get; private set; }
 
-    public CharacterSelectionData charSelectData {
-        get
-        {
-            return this._charSlectData;
-        }
-        set
-        {
-            _charSlectData = value;
-        }
-    }
-
     public int score { get; private set; }
+
+    public string CClass { get; set; }
+
+    public Item Outfit { get; set; }
+
+    public Equipment Shield { get; set; }
+
+    public Equipment Sword { get; set; }
+
+    public Equipment Bow { get; set; }
+
+    public Equipment Arrow { get; set; }
+
+    public Equipment Staff { get; set; }
+
+    public Item Hat { get; set; }
 
     void Awake()
     {
@@ -43,11 +65,18 @@ public class GameController : MonoBehaviour
         }
 
         DontDestroyOnLoad(transform.gameObject);
+
     }
 
     void Start()
     {
-        _charSlectData = defCharData;
+        CClass = _CClass;
+        Outfit = _Outfit;
+        Shield = _Shield;
+        Sword = _Sword;
+        Bow = _Bow;
+        Arrow = _Arrow;
+        Staff = _Staff;
 
         enemyDatabase = _enemyDatabase;
 

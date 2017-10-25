@@ -24,6 +24,7 @@ public class EnemyScriptV2 : MonoBehaviour
         Color GizmoColors = enemyStats.PatrolColor;
 
         stateMachine = new StateMachineV2<EnemyScriptV2>(this);
+
         stateMachine.ChangeState(PatrolStateV2.Instance);
     }
 

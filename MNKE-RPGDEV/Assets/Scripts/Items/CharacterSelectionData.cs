@@ -3,7 +3,7 @@
 [CreateAssetMenu(fileName = "Character Selection Data", menuName = "RPG/Items/Charcter Selection Data")]
 public class CharacterSelectionData : ScriptableObject
 {
-    public GameController.CharClass charClass;
+    //public GameController.CharClass charClass;
     public Item CharacterOutfit;
     public Equipment Shield;
     public Equipment Sword;

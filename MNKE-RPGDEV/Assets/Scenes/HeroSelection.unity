@@ -136,7 +136,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5074a048e429214db3d1143f0c5c8d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  defCharData: {fileID: 11400000, guid: c022b86c68b915e48a014e27fb484949, type: 2}
+  _CClass: KNIGHT
+  _Outfit: {fileID: 11400000, guid: 73caf678440daa14f955fcd68fc087ad, type: 2}
+  _Hat: {fileID: 11400000, guid: c55b73b7b7a7d114fb490fbf8100da2c, type: 2}
+  _Staff: {fileID: 11400000, guid: 3cc35c2d50ebe4246852dfe5840ce074, type: 2}
+  _Shield: {fileID: 11400000, guid: 299cb0865a2b341db86f23f852018b17, type: 2}
+  _Sword: {fileID: 11400000, guid: 5914d978ec5a66f48b37060f6583555e, type: 2}
+  _Bow: {fileID: 11400000, guid: e185a0e966e812741b06173cff122e04, type: 2}
+  _Arrow: {fileID: 11400000, guid: 94877471dd374474daf73cac4ba9a651, type: 2}
 --- !u!4 &6013925
 Transform:
   m_ObjectHideFlags: 0
@@ -198,20 +205,6 @@ Light:
   m_Lightmapping: 4
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
-  m_FalloffTable:
-    m_Table[0]: 0
-    m_Table[1]: 0
-    m_Table[2]: 0
-    m_Table[3]: 0
-    m_Table[4]: 0
-    m_Table[5]: 0
-    m_Table[6]: 0
-    m_Table[7]: 0
-    m_Table[8]: 0
-    m_Table[9]: 0
-    m_Table[10]: 0
-    m_Table[11]: 0
-    m_Table[12]: 0
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
   m_ShadowRadius: 0

@@ -24,7 +24,7 @@ public class KnightSelection : MonoBehaviour
 
     private void Start()
     {
-        GameController.Instance.charSelectData.charClass = GameController.CharClass.KNIGHT;
+        GameController.Instance.CClass = "KNIGHT";
 
         GameObject go = (GameObject)Instantiate(KnightDefaultPrefab, GameObject.Find("CharacterObject").transform, false);
         GameObject sword = Instantiate(KnightDefaultSwordPrefab, go.transform.GetChild(0).gameObject.transform);
@@ -88,7 +88,7 @@ public class KnightSelection : MonoBehaviour
             currentShieldObject = Instantiate(goshield, currentCharacterObject.transform.GetChild(1).gameObject.transform);
         }
 
-        GameController.Instance.charSelectData.CharacterOutfit = equipment;
+        GameController.Instance.Outfit = equipment;
     }
 
     public void UpdateSword(Equipment equipment)
@@ -99,7 +99,7 @@ public class KnightSelection : MonoBehaviour
             currentSwordObject = Instantiate(equipment.prefab, currentCharacterObject.transform.GetChild(0).gameObject.transform);
         }
 
-        GameController.Instance.charSelectData.Sword = equipment;
+        GameController.Instance.Sword = equipment;
     }
 
     public void UpdateShield(Equipment equipment)
@@ -110,7 +110,7 @@ public class KnightSelection : MonoBehaviour
             currentShieldObject = Instantiate(equipment.prefab, currentCharacterObject.transform.GetChild(1).gameObject.transform);
         }
 
-        GameController.Instance.charSelectData.Shield = equipment;
+        GameController.Instance.Shield = equipment;
     }
 
     public void ReturnToMenu()

@@ -40,8 +40,12 @@ public class Grid : MonoBehaviour
                 bool walkable = !(Physics.CheckSphere(worldPoint, nodeRadius, unwalkableMask));
                 bool groundUnderFoot = (Physics.CheckSphere(worldPoint, 0.4f, groundMask));
 
-                Node newNode = new Node(walkable, worldPoint, x, y);
-
+                Node newNode = gameObject.AddComponent<Node>();
+                newNode.walkable = walkable;
+                newNode.worldPosition = worldPoint;
+                newNode.gridX = x;
+                newNode.gridY = y;
+                                                       
                 if (!walkable || !groundUnderFoot)
                 {
                     notWalkableNodes.Add(newNode);
