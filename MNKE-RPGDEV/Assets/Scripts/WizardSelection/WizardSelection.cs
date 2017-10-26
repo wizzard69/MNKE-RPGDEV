@@ -11,6 +11,10 @@ public class WizardSelection : MonoBehaviour
     public GameObject hatPanel;
     public GameObject staffPanel;
 
+    public Item defaultOutfit;
+    public Equipment defaultStaff;
+    public Item defaultHat;
+
     GameObject currentCharacterObject;
     GameObject currentStaffObject;
     GameObject currentHatObject;
@@ -33,6 +37,10 @@ public class WizardSelection : MonoBehaviour
         currentCharacterObject = go;
         currentStaffObject = staff;
         currentHatObject = hat;
+
+        GameController.Instance.Outfit = defaultOutfit;
+        GameController.Instance.Staff = defaultStaff;
+        GameController.Instance.Hat = defaultHat;
     }
 
     public void WizardItemSelection(string knightItemType)

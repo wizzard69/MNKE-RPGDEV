@@ -14,7 +14,5 @@ public class EnemyController : Enemy
     {
         stateController = GetComponent<StateController>();
         stateController.enemyStats = enemyStats;
-
-        base.start();
     }
 }

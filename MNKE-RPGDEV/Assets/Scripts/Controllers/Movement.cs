@@ -70,6 +70,13 @@ public class Movement : MonoBehaviour
             return false;
         }
 
+        RaycastHit hit;
+
+        if (Physics.Raycast(transform.position, target, out hit, 1f, LayerMask.GetMask("characters")))
+        {
+            return false;
+        }
+
         return true;
     }
 }

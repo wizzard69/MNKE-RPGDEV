@@ -11,6 +11,10 @@ public class RangerSelection : MonoBehaviour
     public GameObject bowPanel;
     public GameObject arrowPanel;
 
+    public Item defaultOutfit;
+    public Equipment defaultBow;
+    public Equipment defaultArrow;
+
     GameObject currentCharacterObject;
     GameObject currentBowObject;
     GameObject currentArrowObject;
@@ -33,6 +37,10 @@ public class RangerSelection : MonoBehaviour
         currentCharacterObject = go;
         currentBowObject = bow;
         currentArrowObject = arrow;
+
+        GameController.Instance.Outfit = defaultOutfit;
+        GameController.Instance.Bow = defaultBow;
+        GameController.Instance.Arrow = defaultArrow;
     }
 
     public void rangerItemSelection(string rangerItemType)

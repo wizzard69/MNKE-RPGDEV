@@ -606,6 +606,9 @@ MonoBehaviour:
   outfitPanel: {fileID: 976553236}
   swordPanel: {fileID: 1171142155}
   shieldPanel: {fileID: 680286374}
+  defaultOutfit: {fileID: 11400000, guid: 73caf678440daa14f955fcd68fc087ad, type: 2}
+  defaultSword: {fileID: 11400000, guid: 5914d978ec5a66f48b37060f6583555e, type: 2}
+  defaultShield: {fileID: 11400000, guid: 299cb0865a2b341db86f23f852018b17, type: 2}
 --- !u!114 &490092586
 MonoBehaviour:
   m_ObjectHideFlags: 0

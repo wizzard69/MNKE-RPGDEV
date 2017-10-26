@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 33661995933174242}
   - component: {fileID: 136584256882264358}
   - component: {fileID: 23353032283948254}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: WoodenShield
   m_TagString: Player
   m_Icon: {fileID: 0}

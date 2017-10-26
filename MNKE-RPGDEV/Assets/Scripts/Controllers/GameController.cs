@@ -7,6 +7,7 @@ public class GameController : MonoBehaviour
 
     static GameController _instance;
 
+    [SerializeField]
     EnemyDatabase _enemyDatabase;
 
     [SerializeField]
@@ -50,7 +51,7 @@ public class GameController : MonoBehaviour
     public Equipment Arrow { get; set; }
 
     public Equipment Staff { get; set; }
-
+    
     public Item Hat { get; set; }
 
     void Awake()

@@ -1,9 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ExitScene : MonoBehaviour
 {
+    public string NextScene;
+
     private void FixedUpdate()
     {
         RaycastHit hit;
@@ -12,7 +15,7 @@ public class ExitScene : MonoBehaviour
         {
             if (hit.transform.tag == "Player")
             {
-                print("Exit");
+                SceneManager.LoadScene(NextScene);
             }
         }
     }

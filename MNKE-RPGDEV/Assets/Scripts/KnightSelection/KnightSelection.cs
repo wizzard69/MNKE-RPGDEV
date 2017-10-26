@@ -11,6 +11,10 @@ public class KnightSelection : MonoBehaviour
     public GameObject swordPanel;
     public GameObject shieldPanel;
 
+    public Item defaultOutfit;
+    public Equipment defaultSword;
+    public Equipment defaultShield;
+
     GameObject currentCharacterObject;
     GameObject currentShieldObject;
     GameObject currentSwordObject;
@@ -33,6 +37,10 @@ public class KnightSelection : MonoBehaviour
         currentCharacterObject = go;
         currentShieldObject = shield;
         currentSwordObject = sword;
+
+        GameController.Instance.Outfit = defaultOutfit;
+        GameController.Instance.Sword = defaultSword;
+        GameController.Instance.Shield = defaultShield;
     }
 
     public void KnightItemSelection(string knightItemType)

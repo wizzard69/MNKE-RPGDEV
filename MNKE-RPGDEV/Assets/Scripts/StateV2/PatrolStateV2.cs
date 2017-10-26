@@ -35,7 +35,9 @@ public class PatrolStateV2 : State<EnemyScriptV2>
 
     public override void EnterState(EnemyScriptV2 _owner)
     {
-        ResetMoves(false, _owner);
+        //ResetMoves(false, _owner);
+        hasMovedSpaces = 0;
+        allowedSpacesToMove = 0;
     }
 
     public override void ExitState(EnemyScriptV2 _owner)
@@ -56,19 +58,19 @@ public class PatrolStateV2 : State<EnemyScriptV2>
             return;
         }
 
-        RaycastHit hit;
+        //RaycastHit hit;
 
-        if (Physics.Raycast(_owner.transform.position, _owner.moveDirection, out hit, _owner.enemyStats.detectionDistance, _owner.enemyStats.raycastLayerMask))
-        {
-            if (Vector3.Distance(hit.transform.position, _owner.transform.position) <= 1f)
-            {
-                if (hit.collider.tag != "Player")
-                {
-                    ResetMoves(true, _owner);
-                    return;
-                }
-            }
-        }
+        //if (Physics.Raycast(_owner.transform.position, _owner.moveDirection, out hit, _owner.enemyStats.detectionDistance, _owner.enemyStats.raycastLayerMask))
+        //{
+        //    if (Vector3.Distance(hit.transform.position, _owner.transform.position) <= 1f)
+        //    {
+        //        if (hit.collider.tag != "Player")
+        //        {
+        //            ResetMoves(true, _owner);
+        //            return;
+        //        }
+        //    }
+        //}
 
         _owner.movement.MoveObject(new Vector2(_owner.moveDirection.x, _owner.moveDirection.z), _owner.enemyStats.moveSpeed);
 

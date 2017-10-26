@@ -109,9 +109,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f8d974b409f12046ade0b0fde10b017, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletSpeed: 0
-  bulletRange: 0
+  bulletSpeed: 3
+  bulletRange: 3
   bulletDamage: 5
+  timeBetweenShots: 0.5
   startPos: {x: 0, y: 0, z: 0}
 --- !u!135 &135000817552865880
 SphereCollider:

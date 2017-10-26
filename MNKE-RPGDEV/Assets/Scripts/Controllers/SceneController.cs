@@ -1,6 +1,8 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 
-public class SController : MonoBehaviour
+public class SceneController : MonoBehaviour
 {
     public int noOfEnemiesInScene;
     public GameObject ExitObject;

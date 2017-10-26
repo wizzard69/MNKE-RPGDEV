@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Name: EnemySkeleton
   m_EditorClassIdentifier: 
   EnemyName: Skeleton
+  MaxHealth: 10
   maxSpaceToMoveBeforeRotate: 4
   detectionDistance: 3
   moveWaitTime: 1
@@ -23,3 +24,4 @@ MonoBehaviour:
   MoveToColor: {r: 1, g: 1, b: 0, a: 1}
   AttackColor: {r: 1, g: 0, b: 0, a: 1}
   Level: 1
+  Prefab: {fileID: 1186867449749740, guid: fd2895c8b7d193c4c84531c0a04d21c2, type: 2}

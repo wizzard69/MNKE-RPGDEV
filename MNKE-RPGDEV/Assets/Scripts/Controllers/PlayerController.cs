@@ -5,13 +5,14 @@ using UnityEngine;
 [RequireComponent(typeof(Movement))]
 public class PlayerController : MonoBehaviour
 {
-    public GunController gun;
+    GunController gun;
     public bool allowDiagonals = false;
     public float moveSpeed;
 
     Vector2 input;
     Movement movement;
     bool canMove;
+    bool hasAProjectileWeapon;
 
     private void Awake()
     {
@@ -20,7 +21,16 @@ public class PlayerController : MonoBehaviour
 
     private void Start()
     {
+        gun = gameObject.GetComponentInChildren<GunController>();
+
+        if (gun)
+        {
+            gun.isFiring = false;
+        }        
+
         movement = GetComponent<Movement>();
+
+        HasProjectile();
     }
 
     void Update()
@@ -67,14 +77,15 @@ public class PlayerController : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (hasAProjectileWeapon)
         {
-            gun.isFiring = true;
-        }
-
-        if (Input.GetKeyUp(KeyCode.Space))
-        {
-            gun.isFiring = false;
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                if (!gun.isFiring)
+                {
+                    gun.isFiring = true;
+                }
+            }
         }
     }
 
@@ -113,4 +124,16 @@ public class PlayerController : MonoBehaviour
                 break;
         }
     }
+
+    void HasProjectile()
+    {
+        if (gun != null)
+        {
+            hasAProjectileWeapon = true;
+            return;
+        }
+
+        hasAProjectileWeapon = false;
+    }
 }
+

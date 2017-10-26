@@ -2,33 +2,45 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GunController : MonoBehaviour {
-
+public class GunController : MonoBehaviour
+{
     public bool isFiring;
+    bool IsFirstBullet;
     public BulletController bullet;
-    public float bulletspeed;
-    public float bulletRange;
-    public float timeBetweenShots;
     float shotCounter;
     public Transform firepoint;
+
+    private void Start()
+    {
+        shotCounter = bullet.timeBetweenShots;
+        IsFirstBullet = true;
+    }
 
     private void Update()
     {
         if (isFiring)
         {
+            if (IsFirstBullet)
+            {
+                BulletController newBullet = Instantiate(bullet, firepoint.position, firepoint.rotation) as BulletController;
+                newBullet.bulletSpeed = bullet.bulletSpeed;
+                newBullet.bulletRange = bullet.bulletRange;
+                newBullet.bulletDamage = bullet.bulletDamage;
+                shotCounter = bullet.timeBetweenShots;
+                IsFirstBullet = false;
+            }
+
             shotCounter -= Time.deltaTime;
 
             if (shotCounter <= 0)
             {
-                shotCounter = timeBetweenShots;
                 BulletController newBullet = Instantiate(bullet, firepoint.position, firepoint.rotation) as BulletController;
-                newBullet.bulletSpeed = bulletspeed;
-                newBullet.bulletRange = bulletRange;
+                newBullet.bulletSpeed = bullet.bulletSpeed;
+                newBullet.bulletRange = bullet.bulletRange;
+                newBullet.bulletDamage = bullet.bulletDamage;
+                shotCounter = bullet.timeBetweenShots;
+                isFiring = false;
             }
-        }
-        else
-        {
-            shotCounter = 0;
         }
     }
 }

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerStats : CharacterStats
 {
-    public override void Start()
+    public void Start()
     {
         base.Start();
     }
@@ -13,14 +13,14 @@ public class PlayerStats : CharacterStats
     {
         if (newItem != null)
         {
-            armor.AddModifier(newItem.armorModifier);
-            damage.AddModifier(newItem.damageModifier);
+            //armor.AddModifier(newItem.armorModifier);
+            //damage.AddModifier(newItem.damageModifier);
         }
 
         if (oldItem != null)
         {
-            armor.RemoveModifier(oldItem.armorModifier);
-            damage.RemoveModifier(oldItem.armorModifier);
+            //armor.RemoveModifier(oldItem.armorModifier);
+            //damage.RemoveModifier(oldItem.armorModifier);
         }
     }
 

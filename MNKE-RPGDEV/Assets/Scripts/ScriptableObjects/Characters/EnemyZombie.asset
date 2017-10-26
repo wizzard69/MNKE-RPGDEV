@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Name: EnemyZombie
   m_EditorClassIdentifier: 
   EnemyName: Zombie
+  MaxHealth: 10
   maxSpaceToMoveBeforeRotate: 2
   detectionDistance: 2
   moveWaitTime: 2
@@ -23,3 +24,4 @@ MonoBehaviour:
   MoveToColor: {r: 1, g: 1, b: 0, a: 1}
   AttackColor: {r: 1, g: 0, b: 0, a: 1}
   Level: 1
+  Prefab: {fileID: 1186867449749740, guid: 3f48c4c98d630c04f8e9a361557eb35f, type: 2}

@@ -3,17 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(CharacterStats))]
-public class Enemy : MonoBehaviour
+public class Enemy : CharacterStats
 {
-    CharacterStats stats;
-
-    public void start()
+    public override void Start()
     {
-        stats = GetComponent<CharacterStats>();
-        stats.OnHealthReachedZero += Die;
+        base.Start();
+        OnHealthReachedZero += Die;
     }
 
-    void Die()
+    public void Die()
     {
         Destroy(gameObject);
         print("Enemy is Dead");

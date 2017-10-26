@@ -606,6 +606,9 @@ MonoBehaviour:
   outfitPanel: {fileID: 976553236}
   bowPanel: {fileID: 1171142155}
   arrowPanel: {fileID: 680286374}
+  defaultOutfit: {fileID: 11400000, guid: f9e36d3f3eba0e44ca9f817d95fdedd5, type: 2}
+  defaultBow: {fileID: 11400000, guid: e185a0e966e812741b06173cff122e04, type: 2}
+  defaultArrow: {fileID: 11400000, guid: 94877471dd374474daf73cac4ba9a651, type: 2}
 --- !u!114 &490092586
 MonoBehaviour:
   m_ObjectHideFlags: 0

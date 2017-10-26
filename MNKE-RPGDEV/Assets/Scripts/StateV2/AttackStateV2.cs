@@ -40,8 +40,15 @@ public class AttackStateV2 : State<EnemyScriptV2>
 
     public override void UpdateState(EnemyScriptV2 _owner)
     {
+
+        if (!_owner.gun.isFiring)
+        {
+            _owner.gun.isFiring = true;
+        }
+
         Debug.Log("Attacking Player");
-        _owner.stateMachine.ChangeState(PatrolStateV2.Instance);
+        //_owner.stateMachine.ChangeState(PatrolStateV2.Instance);
+        _owner.stateMachine.ChangeState(MoveToStateV2.Instance);
         return;
     }
 }

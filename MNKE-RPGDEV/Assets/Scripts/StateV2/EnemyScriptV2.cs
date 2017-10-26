@@ -3,22 +3,31 @@ using RPGStateMachine;
 using System.Collections;
 
 [RequireComponent(typeof(Movement))]
-public class EnemyScriptV2 : MonoBehaviour
+public class EnemyScriptV2 : Enemy
 {
     [SerializeField]
     EnemyStats _enemyStats;
     bool isWaiting = false;
     Color GizmoColors;
     bool isAttacking = false;
+    //GunController _gun;
 
     public EnemyStats enemyStats { get; private set; }
     public Movement movement { get; private set; }
     public Vector3 moveDirection { get; set; }
     public StateMachineV2<EnemyScriptV2> stateMachine { get; private set; }
+    public GunController gun { get; private set; }
 
 
-    private void Start()
+    private new void Start()
     {
+        gun = gameObject.GetComponentInChildren<GunController>();
+
+        if (gun)
+        {
+            gun.isFiring = false;
+        }
+
         movement = GetComponent<Movement>();
         enemyStats = _enemyStats;
         Color GizmoColors = enemyStats.PatrolColor;
@@ -26,6 +35,10 @@ public class EnemyScriptV2 : MonoBehaviour
         stateMachine = new StateMachineV2<EnemyScriptV2>(this);
 
         stateMachine.ChangeState(PatrolStateV2.Instance);
+
+        SetMaxHealth(enemyStats.MaxHealth);
+
+        base.Start();
     }
 
     private void Update()
@@ -43,6 +56,7 @@ public class EnemyScriptV2 : MonoBehaviour
         }
 
         ChangeStateColor();
+
         DetectPlayerHit();
     }
 
@@ -77,19 +91,19 @@ public class EnemyScriptV2 : MonoBehaviour
                         isAttacking = true;
                         stateMachine.ChangeState(AttackStateV2.Instance);
                         StartCoroutine(AttackPause());
-                    }                   
+                    }
                 }
             }
             else
             {
                 if (hit.collider.tag == "Player")
                 {
-                    stateMachine.ChangeState(MoveToStateV2.Instance);
+                    stateMachine.ChangeState(AttackStateV2.Instance);
                 }
             }
         }
     }
-        private void OnDrawGizmos()
+    private void OnDrawGizmos()
     {
         if (enemyStats != null)
         {

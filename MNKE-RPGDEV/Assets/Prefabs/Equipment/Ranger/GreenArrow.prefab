@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 33697417853357232}
   - component: {fileID: 136063072623387776}
   - component: {fileID: 23546958520270640}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: GreenArrow
   m_TagString: Untagged
   m_Icon: {fileID: 0}

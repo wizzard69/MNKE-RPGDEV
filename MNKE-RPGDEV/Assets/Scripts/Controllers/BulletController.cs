@@ -4,12 +4,10 @@ using UnityEngine;
 
 public class BulletController : MonoBehaviour
 {
-
-    [HideInInspector]
     public float bulletSpeed;
-    [HideInInspector]
     public float bulletRange;
     public int bulletDamage;
+    public float timeBetweenShots;
     public Vector3 startPos;
 
     private void Start()
@@ -35,9 +33,9 @@ public class BulletController : MonoBehaviour
         {
             if (collision != null)
             {
-                collision.gameObject.GetComponent<CharacterStats>().TakeDamage(bulletDamage);
+               collision.gameObject.transform.parent.gameObject.GetComponent<EnemyScriptV2>().TakeDamage(bulletDamage);
             }
-           
+
             Destroy(gameObject);
         }
     }

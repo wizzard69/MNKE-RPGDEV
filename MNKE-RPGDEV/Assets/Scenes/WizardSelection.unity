@@ -606,6 +606,9 @@ MonoBehaviour:
   outfitPanel: {fileID: 976553236}
   hatPanel: {fileID: 680286374}
   staffPanel: {fileID: 1171142155}
+  defaultOutfit: {fileID: 11400000, guid: b68b4181bc2d7614dbe5f6cec47be1a1, type: 2}
+  defaultStaff: {fileID: 11400000, guid: 3cc35c2d50ebe4246852dfe5840ce074, type: 2}
+  defaultHat: {fileID: 11400000, guid: c55b73b7b7a7d114fb490fbf8100da2c, type: 2}
 --- !u!114 &490092586
 MonoBehaviour:
   m_ObjectHideFlags: 0
