@@ -10,7 +10,6 @@ public class EnemyScriptV2 : Enemy
     bool isWaiting = false;
     Color GizmoColors;
     bool isAttacking = false;
-    //GunController _gun;
 
     public EnemyStats enemyStats { get; private set; }
     public Movement movement { get; private set; }

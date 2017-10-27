@@ -79,4 +79,9 @@ public class Movement : MonoBehaviour
 
         return true;
     }
+
+    public Vector3 GetRandomWalkableNode()
+    {
+        return Grid.WalkableNodes[Random.Range(0, Grid.WalkableNodes.Count)].worldPosition;
+    }
 }

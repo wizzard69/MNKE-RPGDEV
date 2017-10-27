@@ -3,8 +3,7 @@
 public class CharacterStats : MonoBehaviour
 {
     int maxHealth;
-
-    public int currentHealth { get; protected set; } // Current amount of health
+    int currentHealth;
 
     public event System.Action OnHealthReachedZero;
 
@@ -22,10 +21,8 @@ public class CharacterStats : MonoBehaviour
     {
         damage = Mathf.Clamp(damage, 0, int.MaxValue);
 
-        //Subtract damage from Health
         currentHealth -= damage;
 
-        // if we hit 0, Die
         if (currentHealth <= 0)
         {
             if (OnHealthReachedZero != null)
@@ -35,7 +32,6 @@ public class CharacterStats : MonoBehaviour
         }
     }
 
-    //Heal the Character
     public void Heal(int amount)
     {
         currentHealth += amount;

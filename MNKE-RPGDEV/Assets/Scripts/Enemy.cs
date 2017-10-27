@@ -1,14 +1,15 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
+using RPGStateMachine;
 using UnityEngine;
 
-[RequireComponent(typeof(CharacterStats))]
+//[RequireComponent(typeof(CharacterStats))]
 public class Enemy : CharacterStats
 {
+   
     public override void Start()
     {
+        OnHealthReachedZero += Die;     
         base.Start();
-        OnHealthReachedZero += Die;
     }
 
     public void Die()

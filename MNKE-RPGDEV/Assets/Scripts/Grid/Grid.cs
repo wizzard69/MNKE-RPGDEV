@@ -12,12 +12,13 @@ public class Grid : MonoBehaviour
     Node[,] grid;
 
     public static List<Node> notWalkableNodes = new List<Node>();
+    public static List<Node> WalkableNodes = new List<Node>();
 
     float nodeDiameter;
     int gridSizeX;
     int gridSizeY;
 
-    private void Start()
+    private void Awake()
     {
         nodeDiameter = nodeRadius * 2;
         gridSizeX = Mathf.RoundToInt(gridWorldSize.x / nodeDiameter);
@@ -25,6 +26,15 @@ public class Grid : MonoBehaviour
 
         CreateGrid();
     }
+
+    //private void Start()
+    //{
+    //    nodeDiameter = nodeRadius * 2;
+    //    gridSizeX = Mathf.RoundToInt(gridWorldSize.x / nodeDiameter);
+    //    gridSizeY = Mathf.RoundToInt(gridWorldSize.y / nodeDiameter);
+
+    //    CreateGrid();
+    //}
 
     void CreateGrid()
     {
@@ -49,6 +59,10 @@ public class Grid : MonoBehaviour
                 if (!walkable || !groundUnderFoot)
                 {
                     notWalkableNodes.Add(newNode);
+                }
+                else
+                {
+                    WalkableNodes.Add(newNode);
                 }
 
                 grid[x, y] = newNode;
